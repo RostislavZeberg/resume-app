@@ -1,0 +1,83 @@
+@import '../variables';
+@import '../mixins';
+
+.skills {
+  background-color: white;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.skillCategory {
+  background: $light-gray;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  
+  h3 {
+    color: $primary-color;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: $secondary-color;
+    }
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    
+    &::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: $secondary-color;
+    }
+  }
+}
+
+// Адаптивность
+@include tablet {
+  .skillsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@include small-tablet {
+  .skillsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .skillCategory {
+    padding: 1.5rem;
+  }
+}
+
+@include mobile {
+  .skillCategory {
+    padding: 1.2rem;
+    
+    h3 {
+      font-size: 1.2rem;
+    }
+  }
+}

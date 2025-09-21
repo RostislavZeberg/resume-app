@@ -1,0 +1,71 @@
+@import '../variables';
+@import '../mixins';
+
+.projects {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+
+  h2 {
+    color: white;
+  }
+}
+
+.projectsGrid {
+  display: flex;
+  flex-direction: column;
+  // display: grid;
+  // grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  // margin-bottom: 3rem;
+}
+
+.viewAll {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.viewAllButton {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: white;
+  color: $primary-color;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    background: $accent-color;
+    color: white;
+  }
+}
+
+// Адаптивность
+@include tablet {
+  .projectsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@include small-tablet {
+  .projectsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@include mobile {
+  .projectsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .viewAllButton {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}

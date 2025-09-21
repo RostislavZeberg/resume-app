@@ -1,0 +1,30 @@
+@import '../variables';
+@import '../mixins';
+
+.about {
+  background-color: $light-gray;
+}
+
+.aboutContent {
+  max-width: 800px;
+  margin: 0 auto;
+  
+  p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    text-align: justify;
+  }
+}
+
+// Адаптивность
+@include tablet {
+  .aboutContent {
+    padding: 0 1rem;
+  }
+}
+
+@include mobile {
+  .aboutContent p {
+    text-align: left;
+  }
+}

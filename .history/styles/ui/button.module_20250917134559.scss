@@ -1,0 +1,38 @@
+@import '../variables';
+@import '../mixins';
+
+.button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-align: center;
+  
+  &.primary {
+    background-color: $primary-color;
+    color: white;
+    
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+  
+  &.secondary {
+    background-color: $secondary-color;
+    color: white;
+    
+    &:hover {
+      background-color: darken($secondary-color, 10%);
+    }
+  }
+}
+
+// Адаптивность
+@include mobile {
+  .button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}

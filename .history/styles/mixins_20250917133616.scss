@@ -1,0 +1,38 @@
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$small-tablet}) and (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin small-tablet {
+  @media (min-width: #{$mobile}) and (max-width: #{$small-tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin card-shadow {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  
+  &:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+}

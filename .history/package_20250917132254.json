@@ -1,0 +1,27 @@
+{
+  "name": "resume-app",
+  "version": "1.0.0",
+  "description": "Резюме фронтенд-разработчика React",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "export": "next export"
+  },
+  "dependencies": {
+    "next": "14.0.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sass": "1.69.5"
+  },
+  "devDependencies": {
+    "@types/node": "20.9.0",
+    "@types/react": "18.2.37",
+    "@types/react-dom": "18.2.15",
+    "eslint": "8.53.0",
+    "eslint-config-next": "14.0.4",
+    "typescript": "5.2.2"
+  }
+}
